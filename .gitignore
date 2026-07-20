@@ -6,3 +6,8 @@
 /content/
 /_unzipped/
 PersonalWebsite.zip
+
+# HEIC originals — not web-compatible; web-ready .jpg versions are committed instead.
+*.HEIC
+*.heic
+assets/Travel3.jpeg

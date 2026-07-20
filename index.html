@@ -73,7 +73,7 @@
     }
     .nav-links.open { display: flex; }
     .nav-links .nav-item { font-size: 21px !important; letter-spacing: 0.08em; }
-    .hero-grid, .pro-header, .about-grid, .edu-skills, .resume-row, .car-gallery, .moto-grid { grid-template-columns: 1fr !important; }
+    .hero-grid, .pro-header, .about-grid, .edu-skills, .resume-row, .car-gallery, .moto-grid, .travel-grid { grid-template-columns: 1fr !important; }
   }
 </style>
 </head>
@@ -113,8 +113,8 @@
       </div>
       <!-- personal photo -->
       <div data-reveal style="align-self: end;">
-        <div style="position: relative; aspect-ratio: 4/5; border-radius: 4px; background: repeating-linear-gradient(135deg, #e7ded1 0 10px, #ede5d9 10px 20px); box-shadow: 0 26px 50px -28px rgba(43,39,36,0.4); display: flex; align-items: flex-end; padding: 16px;">
-          <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.06em; color: #9a9082; background: rgba(244,239,232,0.85); padding: 5px 8px; border-radius: 3px;">drop: assets/portrait.jpg</span>
+        <div style="position: relative; aspect-ratio: 4/5; border-radius: 4px; overflow: hidden; box-shadow: 0 26px 50px -28px rgba(43,39,36,0.4);">
+          <img src="assets/portrait.png" alt="Caden Ice" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; display: block;">
         </div>
       </div>
     </header>
@@ -169,14 +169,17 @@
 
       <!-- car gallery -->
       <div class="car-gallery" style="display: grid; grid-template-columns: 1.4fr 1fr; grid-auto-rows: 1fr; gap: clamp(16px, 2.4vw, 28px);">
-        <div data-reveal style="grid-row: span 2; position: relative; aspect-ratio: 4/5; border-radius: 5px; overflow: hidden; background: repeating-linear-gradient(135deg, #e4dacb 0 11px, #ece3d5 11px 22px); box-shadow: 0 30px 60px -34px rgba(43,39,36,0.5);">
-          <span style="position: absolute; left: 16px; bottom: 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #8f8576; background: rgba(244,239,232,0.9); padding: 6px 9px; border-radius: 3px;">the truck — assets/truck.jpg</span>
+        <div data-reveal style="grid-row: span 2; position: relative; aspect-ratio: 4/5; border-radius: 5px; overflow: hidden; box-shadow: 0 30px 60px -34px rgba(43,39,36,0.5);">
+          <img src="assets/truck.jpg" alt="The truck" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+          <span style="position: absolute; left: 16px; bottom: 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #f4efe8; background: rgba(43,39,36,0.6); padding: 6px 9px; border-radius: 3px;">the truck</span>
         </div>
-        <div data-reveal style="position: relative; border-radius: 5px; overflow: hidden; background: repeating-linear-gradient(135deg, #e7ded1 0 11px, #efe7db 11px 22px); box-shadow: 0 24px 46px -30px rgba(43,39,36,0.45); min-height: 200px;">
-          <span style="position: absolute; left: 14px; bottom: 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #8f8576; background: rgba(244,239,232,0.9); padding: 6px 9px; border-radius: 3px;">the corvette (planned) — assets/corvette.jpg</span>
+        <div data-reveal style="position: relative; border-radius: 5px; overflow: hidden; box-shadow: 0 24px 46px -30px rgba(43,39,36,0.45); min-height: 200px;">
+          <img src="assets/corvette.jpg" alt="C7 Corvette (planned)" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+          <span style="position: absolute; left: 14px; bottom: 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #f4efe8; background: rgba(43,39,36,0.6); padding: 6px 9px; border-radius: 3px;">the corvette (planned)</span>
         </div>
-        <div data-reveal style="position: relative; border-radius: 5px; overflow: hidden; background: repeating-linear-gradient(135deg, #e7ded1 0 11px, #efe7db 11px 22px); box-shadow: 0 24px 46px -30px rgba(43,39,36,0.45); min-height: 200px;">
-          <span style="position: absolute; left: 14px; bottom: 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #8f8576; background: rgba(244,239,232,0.9); padding: 6px 9px; border-radius: 3px;">the wrx (traded) — assets/wrx.jpg</span>
+        <div data-reveal style="position: relative; border-radius: 5px; overflow: hidden; box-shadow: 0 24px 46px -30px rgba(43,39,36,0.45); min-height: 200px;">
+          <img src="assets/wrx.JPG" alt="2020 WRX (traded)" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+          <span style="position: absolute; left: 14px; bottom: 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #f4efe8; background: rgba(43,39,36,0.6); padding: 6px 9px; border-radius: 3px;">the wrx (traded)</span>
         </div>
       </div>
 
@@ -194,17 +197,14 @@
       </div>
       <p data-reveal style="margin: 0 0 28px; font-size: 1.08rem; line-height: 1.75; color: #4a443e; max-width: 58ch;">I test everything. A Draggy GPS meter rides along for 0–60s, quarter-miles, and roll races — I'd rather line two cars up and compare real numbers than argue over spec sheets. A few runs, with times:</p>
       <div class="cartest-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: clamp(16px, 2.4vw, 28px);">
-        <div data-reveal style="position: relative; aspect-ratio: 4/3; border-radius: 6px; overflow: hidden; background: repeating-linear-gradient(135deg, #e7ded1 0 11px, #efe7db 11px 22px); box-shadow: 0 22px 44px -30px rgba(43,39,36,0.45);">
-          <span style="position: absolute; right: 12px; top: 12px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #f4efe8; background: rgba(43,39,36,0.85); padding: 6px 10px; border-radius: 4px;">0–60 · —s</span>
-          <span style="position: absolute; left: 12px; bottom: 12px; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: #8f8576; background: rgba(244,239,232,0.9); padding: 5px 8px; border-radius: 3px;">drop: assets/run1.jpg</span>
+        <div data-reveal style="position: relative; aspect-ratio: 4/3; border-radius: 6px; overflow: hidden; box-shadow: 0 22px 44px -30px rgba(43,39,36,0.45);">
+          <img src="assets/run1.jpeg" alt="Car testing run" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
         </div>
-        <div data-reveal style="position: relative; aspect-ratio: 4/3; border-radius: 6px; overflow: hidden; background: repeating-linear-gradient(135deg, #e7ded1 0 11px, #efe7db 11px 22px); box-shadow: 0 22px 44px -30px rgba(43,39,36,0.45);">
-          <span style="position: absolute; right: 12px; top: 12px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #f4efe8; background: rgba(43,39,36,0.85); padding: 6px 10px; border-radius: 4px;">1/4 mi · —s</span>
-          <span style="position: absolute; left: 12px; bottom: 12px; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: #8f8576; background: rgba(244,239,232,0.9); padding: 5px 8px; border-radius: 3px;">drop: assets/run2.jpg</span>
+        <div data-reveal style="position: relative; aspect-ratio: 4/3; border-radius: 6px; overflow: hidden; box-shadow: 0 22px 44px -30px rgba(43,39,36,0.45);">
+          <img src="assets/run2.jpeg" alt="Car testing run" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
         </div>
-        <div data-reveal style="position: relative; aspect-ratio: 4/3; border-radius: 6px; overflow: hidden; background: repeating-linear-gradient(135deg, #e7ded1 0 11px, #efe7db 11px 22px); box-shadow: 0 22px 44px -30px rgba(43,39,36,0.45);">
-          <span style="position: absolute; right: 12px; top: 12px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #f4efe8; background: rgba(43,39,36,0.85); padding: 6px 10px; border-radius: 4px;">0–60 · —s</span>
-          <span style="position: absolute; left: 12px; bottom: 12px; font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: #8f8576; background: rgba(244,239,232,0.9); padding: 5px 8px; border-radius: 3px;">drop: assets/run3.jpg</span>
+        <div data-reveal style="position: relative; aspect-ratio: 4/3; border-radius: 6px; overflow: hidden; box-shadow: 0 22px 44px -30px rgba(43,39,36,0.45);">
+          <img src="assets/run3.jpeg" alt="Car testing run" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
         </div>
       </div>
     </section>
@@ -216,8 +216,9 @@
         <span style="flex: 1; height: 1px; background: rgba(43,39,36,0.12);"></span>
       </div>
       <div class="moto-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 3vw, 40px); align-items: stretch;">
-        <div data-reveal style="position: relative; aspect-ratio: 4/3; border-radius: 6px; overflow: hidden; background: repeating-linear-gradient(135deg, #e4dacb 0 11px, #ece3d5 11px 22px); box-shadow: 0 28px 54px -34px rgba(43,39,36,0.5);">
-          <span style="position: absolute; left: 14px; bottom: 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #8f8576; background: rgba(244,239,232,0.9); padding: 6px 9px; border-radius: 3px;">the scout — assets/scout.jpg</span>
+        <div data-reveal style="position: relative; aspect-ratio: 4/3; border-radius: 6px; overflow: hidden; box-shadow: 0 28px 54px -34px rgba(43,39,36,0.5);">
+          <img src="assets/scout.jpg" alt="2016 Indian Scout 60" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+          <span style="position: absolute; left: 14px; bottom: 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #f4efe8; background: rgba(43,39,36,0.6); padding: 6px 9px; border-radius: 3px;">the scout</span>
         </div>
         <div data-reveal style="background: #faf7f1; border: 1px solid rgba(43,39,36,0.08); border-radius: 6px; padding: 28px 26px; box-shadow: 0 18px 40px -32px rgba(43,39,36,0.4); display: flex; flex-direction: column; justify-content: center;">
           <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 14px;">past / rode</div>
@@ -234,9 +235,8 @@
         <span style="flex: 1; height: 1px; background: rgba(43,39,36,0.12);"></span>
       </div>
       <p data-reveal style="margin: 0 0 28px; font-size: 1.08rem; line-height: 1.75; color: #4a443e; max-width: 58ch;">Flying is the newest thing I've gotten obsessed with — part photography, part reflexes, part learning to trust a machine I'm running from the ground. Here's some of what I've shot:</p>
-      <div class="yt-embed" data-id="" data-reveal role="button" tabindex="0" aria-label="Play drone video">
+      <div class="yt-embed" data-id="DFvbRiPVTrk" data-reveal role="button" tabindex="0" aria-label="Play drone video">
         <div class="yt-play"></div>
-        <span class="yt-hint">add a YouTube video ID to data-id</span>
       </div>
     </section>
 
@@ -247,6 +247,23 @@
         <span style="flex: 1; height: 1px; background: rgba(43,39,36,0.12);"></span>
       </div>
       <div id="offclock" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: clamp(18px, 2.6vw, 30px);"></div>
+
+      <!-- travel photos -->
+      <div data-reveal style="display: flex; align-items: baseline; gap: 16px; margin: clamp(72px,11vh,120px) 0 32px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #8a8178;">on the road</span>
+        <span style="flex: 1; height: 1px; background: rgba(43,39,36,0.12);"></span>
+      </div>
+      <div class="travel-grid" style="display: grid; grid-template-columns: 1.5fr 1fr; grid-auto-rows: 1fr; gap: clamp(12px, 2vw, 22px);">
+        <div data-reveal style="grid-row: span 2; position: relative; aspect-ratio: 3/4; border-radius: 7px; overflow: hidden; box-shadow: 0 28px 56px -34px rgba(43,39,36,0.5);">
+          <img src="assets/travel1.jpg" alt="Travel" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div data-reveal style="position: relative; border-radius: 7px; overflow: hidden; min-height: 200px; box-shadow: 0 22px 44px -30px rgba(43,39,36,0.45);">
+          <img src="assets/travel2.jpg" alt="Travel" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <div data-reveal style="position: relative; border-radius: 7px; overflow: hidden; min-height: 200px; box-shadow: 0 22px 44px -30px rgba(43,39,36,0.45);">
+          <img src="assets/travel3.jpg" alt="Travel" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;">
+        </div>
+      </div>
 
       <footer style="margin-top: clamp(90px, 14vh, 150px); padding-top: 34px; border-top: 1px solid rgba(43,39,36,0.1); display: flex; flex-wrap: wrap; gap: 18px 40px; justify-content: space-between; align-items: baseline; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.06em; color: #8a8178;">
         <span>next up — the professional side</span>
@@ -267,8 +284,8 @@
         <h1 data-reveal style="margin: 0; font-weight: 300; font-size: clamp(2.3rem, 5.4vw, 4.2rem); line-height: 1.05; letter-spacing: -0.02em; max-width: 15ch; text-wrap: balance;">The narrative version, <em style="font-style: italic;">not a list of jobs.</em></h1>
       </div>
       <div data-reveal style="padding-top: clamp(4px, 3vw, 42px);">
-        <p style="margin: 0 0 18px; font-size: 1.12rem; line-height: 1.75; color: #4a443e;">I sit where product meets engineering — writing user stories and acceptance criteria one week, running Playwright tests and shipping features the next. I care most about the part where a rough idea becomes something that actually holds up in someone's hands.</p>
-        <p style="margin: 0; font-size: 1.12rem; line-height: 1.75; color: #4a443e;">Where I'm headed: product ownership and Agile leadership, working close to real users on problems that reward patience. The ambition isn't scale for its own sake — it's building things deep enough that people keep them.</p>
+        <p style="margin: 0 0 18px; font-size: 1.12rem; line-height: 1.75; color: #4a443e;">I work where AI strategy meets engineering — building automations and weaving AI models into a consulting firm's workflows one week, running tests and shipping the next. I care most about the part where a rough idea becomes something that actually holds up in someone's hands.</p>
+        <p style="margin: 0; font-size: 1.12rem; line-height: 1.75; color: #4a443e;">Where I'm headed: product ownership, project management, and Agile leadership, working close to real users on problems that reward patience. The ambition isn't scale for its own sake, but to build things deep enough that people keep them.</p>
       </div>
     </header>
 
@@ -276,8 +293,8 @@
     <section style="margin-top: clamp(80px, 12vh, 140px); display: grid; grid-template-columns: minmax(0,0.34fr) minmax(0,1fr); gap: clamp(24px, 5vw, 64px);">
       <div data-reveal style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #8a8178; padding-top: 8px;">résumé</div>
       <div data-reveal class="resume-row" style="display: flex; gap: clamp(20px, 3vw, 34px); align-items: stretch; flex-wrap: wrap;">
-        <a href="assets/CadenIce-Resume.pdf" target="_blank" rel="noopener" style="position: relative; width: 168px; aspect-ratio: 8.5/11; border-radius: 4px; background: repeating-linear-gradient(180deg, #efe7db 0 9px, #f3ede3 9px 18px); box-shadow: 0 22px 44px -28px rgba(43,39,36,0.45); flex-shrink: 0; display: block;">
-          <span style="position: absolute; left: 12px; bottom: 12px; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; color: #9a9082; background: rgba(244,239,232,0.88); padding: 4px 7px; border-radius: 3px;">résumé.pdf</span>
+        <a href="assets/CadenIce-Resume.pdf" target="_blank" rel="noopener" style="position: relative; width: 168px; aspect-ratio: 8.5/11; border-radius: 4px; overflow: hidden; box-shadow: 0 22px 44px -28px rgba(43,39,36,0.45); flex-shrink: 0; display: block;">
+          <img src="assets/resume.png" alt="Résumé preview" loading="lazy" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top;">
         </a>
         <div style="display: flex; flex-direction: column; justify-content: center; gap: 14px; min-width: 200px;">
           <p style="margin: 0; font-size: 1.05rem; line-height: 1.7; color: #4a443e; max-width: 34ch;">One page, kept current. View it in the browser or take a copy with you.</p>
@@ -419,13 +436,15 @@
   var offclock = [
     { label: "in the headphones", body: "EDM, most of the time I'm building anything." },
     { label: "on the calendar", body: "A 16-week progressive running plan — Mon / Wed / Sat, one block at a time." },
-    { label: "on the map", body: "Rome and Athens twice, plus Sorrento, Meteora, Istanbul, Dublin, and South Africa — and a stretch of the Caribbean and Mexico: Cancún, Cozumel, Playa del Carmen, Punta Cana, and Negril." }
+    { label: "on the map", body: "Rome and Athens twice, plus Florence, Sorrento, Meteora, Istanbul, Dublin, and South Africa — and a stretch of the Caribbean and Mexico: Cancún, Cozumel, Playa del Carmen, Punta Cana, and Negril." }
   ];
 
   var experience = [
-    { when: "2026 — now", role: "QA Engineer & Product Owner (Intern)", org: "Zeal IT Consultants · Alight", tags: "Product ownership · QA · Playwright · WCAG AA", body: "A dual-track consulting and engineering role on Alight's “Money Pod” (HSA / FSA / retirement / pension platform). I write user stories and epics on the product side and pick up QA stories at the same velocity as the full-time engineers — automating tests in Playwright, raising WCAG 2.1 AA accessibility bugs, and building a Claude-guided workflow that runs a story from test start to finish. I also own the account's Obsidian knowledge vault (below)." },
+    { when: "2026 — now", role: "AI Strategist & QA Engineer", org: "Zeal IT Consultants · Alight", tags: "AI strategy · Automation · Autonomous agents · QA", body: "As AI strategist I build automations and weave AI models into the company's workflows — deploying autonomous agents and designing structured knowledge layers that optimize model output. I built an Obsidian knowledge vault for the Alight account that's now saving consultants real time and rolling out to other clients, and I've presented it to 40+ people on both what it does and how it works technically. On the QA side I test at the velocity of the full-time engineers, with a built Playwright automation suite, a Claude-guided testing workflow, and WCAG 2.1 AA accessibility work." },
+    { when: "2025 — now", role: "Solo builder & product lead", org: "Almura", tags: "Product · Engineering · Research · Branding", body: "A native iOS app I've taken end to end on my own — requirements gathering and user research, engineering the build, testing, and the branding and marketing around it. Almura helps people keep deep context on the relationships that matter and uses AI to surface it when they need it; it's in invite-only testing now, launching to UNT students first." },
+    { when: "2025 — now", role: "Member & panel lead", org: "SIM NextGen · SIM DFW", tags: "Leadership · Mentorship · Events", body: "Selected for SIM DFW's NextGen cohort, where I've received mentorship from senior technology and business leaders and volunteered to lead the SIM DFW Leadership & Insights Panel — curating topics, coordinating speakers and logistics, and moderating the session." },
     { when: "Summer 2025", role: "Software Development Intern", org: "Zeal IT Consultants", tags: "Java · Spring Boot · Angular · Scrum", body: "Delivered full-stack features on a pharmacy formulary product — including a bulk formulary upload that validated and persisted drug data against enterprise schemas — and challenged legacy database assumptions to improve long-term maintainability. Worked inside a Scrum team on Jira through planning, standups, and delivery." },
-    { when: "2025 — now", role: "Product & Project Lead", org: "RideSafe (independent venture)", tags: "Product strategy · APIs · Risk modeling", body: "Creator and technical lead of a motorcycle-safety app that turns public crash data and risk-based routing into risk scores for intersections, road segments, and routes across Texas. Owned MVP scope and roadmap end to end — personas, user stories, acceptance criteria, and a scalable architecture — and entered it into the SCLC 2026 competition." },
+    { when: "2025", role: "Product & Project Lead", org: "RideSafe (independent venture)", tags: "Product strategy · APIs · Risk modeling", body: "Creator and technical lead of a motorcycle-safety app that turns public crash data and risk-based routing into risk scores for intersections, road segments, and routes across Texas. Owned scope and roadmap end to end — personas, a prioritized roadmap, and a scalable architecture — and entered it into the SCLC 2026 competition." },
     { when: "2022 — 2023", role: "Off-Campus Student Representative", org: "Residents Interhall Congress · U. of Arkansas", tags: "Governance · Budgeting · Stakeholders", body: "Elected one of two representatives for ~500 off-campus students. Evaluated ~20 funding proposals and allocated a $42K annual budget toward social, wellness, and academic programs reaching hundreds of students." }
   ];
 
@@ -434,6 +453,7 @@
   ];
 
   var certs = [
+    { name: "Test Automation Bootcamp", by: "Zeal IT Consultants · 2026" },
     { name: "Iterative Software Development Bootcamp", by: "Zeal · 2025" },
     { name: "PowerBI Bootcamp", by: "Udemy · 2025" },
     { name: "Salesforce Bootcamp", by: "MaxLabs · 2024" }
@@ -446,16 +466,16 @@
   ];
 
   var outcomes = [
-    { metric: "Top 10, global", body: "RideSafe named a top-10 international finalist in the SCLC 2026 competition, with a launch that reached 46K+ views." },
-    { metric: "Company-wide", body: "Built and deployed an Obsidian knowledge vault for the full Alight account; now used daily and spreading to other projects across the firm." },
-    { metric: "$42K budget", body: "Allocated a $42K annual budget across ~20 funding proposals as an elected representative for ~500 students." },
-    { metric: "9 interviews", body: "Ran 9 structured user-research interviews for Almura and synthesized them into a concrete v2 direction." }
+    { metric: "380+ responses", body: "Ran user validation testing that reached 46K+ views and gathered responses from over 380 potential users — grounding product decisions in real demand." },
+    { metric: "SCLC top 10", body: "RideSafe named a top-10 international finalist in the SCLC 2026 competition — idea to build to recognition." },
+    { metric: "Company-wide", body: "Built an Obsidian knowledge vault that's saving consultants time on the Alight account and now rolling out to other clients." },
+    { metric: "$42K budget", body: "Allocated a $42K annual budget across ~20 funding proposals as an elected representative for ~500 students." }
   ];
 
   var currently = [
-    { when: "at work", body: "QA + product ownership on Alight's Money Pod — ramping onto the QA team using Playwright and filing real WCAG AA accessibility fixes." },
-    { when: "building", body: "Almura v2 — a ground-up rewrite shaped by a first cohort of student testers. Narrowing, not adding." },
-    { when: "competing", body: "Taking RideSafe through the SCLC 2026 finals and sharpening the crash-risk model." }
+    { when: "at work", body: "AI strategist at Zeal — building automations, integrating AI models and processes into the company's workflows, deploying autonomous agents, and designing structured knowledge layers that optimize model output." },
+    { when: "building", body: "Almura — a native iOS app in invite-only testing, launching to UNT students first. Requirements, engineering, testing, and branding, all solo." },
+    { when: "sharing", body: "Presenting the knowledge vault to 40+ people across the firm — what it does and how it works technically — as it rolls out to new clients." }
   ];
 
   var mediaLog = [
@@ -476,7 +496,11 @@
     {
       index: "01 — almura", meta: "company · in progress",
       title: "Helping students keep the relationships that scatter.",
-      shot: "almura — assets/almura.jpg",
+      media: '<div data-reveal style="margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(10px, 2vw, 18px); max-width: 560px;">' +
+        '<img src="assets/almura1.png" alt="Almura app screen" loading="lazy" style="width:100%; height:auto; display:block; border-radius:14px; box-shadow: 0 20px 44px -26px rgba(43,39,36,0.5);">' +
+        '<img src="assets/almura2.png" alt="Almura app screen" loading="lazy" style="width:100%; height:auto; display:block; border-radius:14px; box-shadow: 0 20px 44px -26px rgba(43,39,36,0.5);">' +
+        '<img src="assets/almura3.png" alt="Almura app screen" loading="lazy" style="width:100%; height:auto; display:block; border-radius:14px; box-shadow: 0 20px 44px -26px rgba(43,39,36,0.5);">' +
+        '</div>',
       cols: [
         { label: "the problem", body: "Students meet more people than at any other point in life, and lose most of them to sheer volume — good conversations that never become relationships because nothing catches them." },
         { label: "the approach", body: "A production relationship-intelligence app on the Claude API: RAG with pgvector, a React front end on Vercel, a Node backend on Railway, Supabase, and a D3 force-directed graph. Built around depth, so it works for a few real relationships — not a big empty list." },
@@ -486,7 +510,7 @@
     {
       index: "02 — ridesafe", meta: "project · SCLC 2026 finalist",
       title: "A safety tool built for one specific, real problem.",
-      shot: "ridesafe — assets/ridesafe.jpg",
+      media: '<div data-reveal style="margin-top: 28px;"><div class="yt-embed" data-id="BJDY9oyZkig" role="button" tabindex="0" aria-label="Play RideSafe video"><div class="yt-play"></div></div></div>',
       cols: [
         { label: "the problem", body: "Motorcyclists face wildly uneven risk depending on the exact intersections and road segments they ride — information that exists in public crash data but never reaches the rider making a route decision." },
         { label: "the approach", body: "I built a risk-scoring engine on public crash data, external APIs, and risk-based routing that scores intersections, road segments, and full routes across Texas. I owned scope and roadmap end to end — personas, user stories, acceptance criteria, and a scalable architecture." },
@@ -496,7 +520,7 @@
     {
       index: "03 — the knowledge vault", meta: "internal tool · shipped",
       title: "An Obsidian knowledge vault that outgrew its account.",
-      shot: "knowledge vault — assets/vault.jpg",
+      media: '<div data-reveal style="margin-top: 28px; display: flex; justify-content: center;"><img src="assets/vault.png" alt="Knowledge vault graph" loading="lazy" style="max-width: min(100%, 760px); height: auto; display: block; border-radius: 8px; box-shadow: 0 26px 52px -34px rgba(43,39,36,0.45);"></div>',
       cols: [
         { label: "the problem", body: "Consulting knowledge — decisions, context, client dynamics — lived in scattered Slack threads and meeting transcripts, and evaporated the moment someone needed it later." },
         { label: "the approach", body: "I built an Obsidian-based vault with automated ingestion — migrated to Claude Code routines that pull in Slack messages and Tactiq transcripts and turn them into structured, wikilinked, searchable notes." },
@@ -614,9 +638,7 @@
       '</div>' +
       '<h2 data-reveal style="margin: 0 0 24px; font-weight: 300; font-size: clamp(1.7rem, 3.4vw, 2.6rem); line-height: 1.12; max-width: 22ch;">' + esc(p.title) + '</h2>' +
       '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: clamp(20px,3vw,36px);">' + cols + '</div>' +
-      '<div data-reveal style="margin-top: 28px; position: relative; aspect-ratio: 16/7; border-radius: 8px; background: repeating-linear-gradient(135deg,#e7ded1 0 12px,#efe7db 12px 24px); box-shadow: 0 26px 52px -34px rgba(43,39,36,0.45);">' +
-        '<span style="position: absolute; left: 16px; bottom: 16px; font-family: \'JetBrains Mono\', monospace; font-size: 10.5px; color: #8f8576; background: rgba(244,239,232,0.9); padding: 5px 8px; border-radius: 3px;">' + esc(p.shot) + '</span>' +
-      '</div>' +
+      (p.media || "") +
     '</section>';
   }).join("");
 
