@@ -23,6 +23,7 @@
   a:hover { color: #2b2724; }
   .mono { font-family: 'JetBrains Mono', monospace; }
   /* nav buttons */
+  .nav-links { display: flex; }
   .navbtn { all: unset; cursor: pointer; transition: color .25s ease; }
   .navbtn.active { color: var(--accent); }
   .navbtn:not(.active) { color: #8a8178; }
@@ -37,8 +38,32 @@
   /* view toggling */
   .view { display: none; }
   .view.active { display: block; }
+  /* hamburger toggle — hidden on desktop */
+  .nav-toggle { all: unset; display: none; cursor: pointer; width: 26px; height: 18px; position: relative; z-index: 60; }
+  .nav-toggle .bar { position: absolute; left: 0; right: 0; height: 1.5px; background: #2b2724; transition: transform .3s ease, opacity .2s ease, top .3s ease; }
+  .nav-toggle .bar:nth-child(1) { top: 1px; }
+  .nav-toggle .bar:nth-child(2) { top: 8px; }
+  .nav-toggle .bar:nth-child(3) { top: 15px; }
+  .nav-toggle.open .bar:nth-child(1) { top: 8px; transform: rotate(45deg); }
+  .nav-toggle.open .bar:nth-child(2) { opacity: 0; }
+  .nav-toggle.open .bar:nth-child(3) { top: 8px; transform: rotate(-45deg); }
+
   @media (max-width: 720px) {
-    .nav-links { gap: 14px !important; }
+    .nav-toggle { display: block; }
+    .nav-links {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      height: 100vh; height: 100dvh;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 30px !important;
+      background: #f4efe8;
+      display: none;
+      z-index: 45;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links .nav-item { font-size: 21px !important; letter-spacing: 0.08em; }
     .hero-grid, .pro-header, .about-grid, .edu-skills, .resume-row { grid-template-columns: 1fr !important; }
   }
 </style>
@@ -54,13 +79,16 @@
     <button data-go="home" class="navbtn" style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; letter-spacing: 0.12em; text-transform: lowercase; color: #2b2724 !important; display: flex; align-items: baseline; gap: 8px;">
       <span style="width: 7px; height: 7px; border-radius: 50%; background: var(--accent); display: inline-block; transform: translateY(-1px);"></span>caden ice
     </button>
-    <div class="nav-links" style="display: flex; align-items: center; gap: clamp(14px, 2.4vw, 30px); font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.06em;">
+    <div class="nav-links" id="navLinks" style="align-items: center; gap: clamp(14px, 2.4vw, 30px); font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.06em;">
       <button data-go="home" class="navbtn nav-item">home</button>
       <button data-go="hobbies" class="navbtn nav-item">hobbies</button>
       <button data-go="pro" class="navbtn nav-item">professional</button>
       <button data-go="growth" class="navbtn nav-item">growth</button>
       <button data-go="projects" class="navbtn nav-item">projects</button>
     </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
   </nav>
 
   <!-- ============ HOME / ABOUT ============ -->
@@ -561,7 +589,24 @@
     els.forEach(function (elm) { io.observe(elm); });
   }
 
+  var navLinks = el("navLinks");
+  var navToggle = el("navToggle");
+  function closeMenu() {
+    if (navLinks) navLinks.classList.remove("open");
+    if (navToggle) { navToggle.classList.remove("open"); navToggle.setAttribute("aria-expanded", "false"); }
+    document.body.style.overflow = "";
+  }
+  if (navToggle) {
+    navToggle.addEventListener("click", function () {
+      var open = navLinks.classList.toggle("open");
+      navToggle.classList.toggle("open", open);
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      document.body.style.overflow = open ? "hidden" : "";
+    });
+  }
+
   function setView(v) {
+    closeMenu();
     var views = document.querySelectorAll(".view");
     var current = null;
     views.forEach(function (view) {
