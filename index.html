@@ -44,6 +44,8 @@
   .yt-play::after { content: ""; position: absolute; left: 52%; top: 50%; transform: translate(-50%, -50%); border-style: solid; border-width: 11px 0 11px 18px; border-color: transparent transparent transparent #f4efe8; }
   .yt-embed:hover .yt-play { background: var(--accent); transform: translate(-50%, -50%) scale(1.06); }
   .yt-hint { position: absolute; left: 14px; bottom: 14px; z-index: 1; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #8f8576; background: rgba(244,239,232,0.9); padding: 6px 9px; border-radius: 3px; }
+  .person-pill { font-size: 0.98rem; padding: 7px 15px; border: 1px solid rgba(43,39,36,0.18); border-radius: 999px; color: #2b2724; background: #f7f3ec; transition: border-color .25s ease; }
+  .person-pill:hover { border-color: var(--accent); }
   /* view toggling */
   .view { display: none; }
   .view.active { display: block; }
@@ -369,17 +371,100 @@
   <main style="position: relative; z-index: 1; max-width: 720px; margin: 0 auto; padding: clamp(120px, 16vh, 190px) clamp(24px, 6vw, 40px) 120px;">
     <div data-reveal style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 26px;">growth — a thinking space</div>
     <h1 data-reveal style="margin: 0 0 36px; font-weight: 300; font-size: clamp(2.1rem, 4.6vw, 3.4rem); line-height: 1.1; letter-spacing: -0.018em;">What I take in, <em style="font-style: italic;">and what it moves.</em></h1>
-    <p data-reveal style="margin: 0 0 20px; font-size: 1.2rem; line-height: 1.85; font-weight: 300; color: #2b2724;">This is the quietest page on the site, on purpose. It's less a list of credentials than a record of what's actually changing how I think and work — usually slowly, usually more than I notice at the time.</p>
+    <p data-reveal style="margin: 0 0 20px; font-size: 1.2rem; line-height: 1.85; font-weight: 300; color: #2b2724;">I'm a lover of learning, and going stale isn't an option. I've come to believe your mental growth deserves the same care as your health — or anything else you'd never let slide — and that nothing worthwhile comes easy. What follows is a record of what's shaped how I think: the beliefs I keep returning to, the media that moved me, the lessons experience taught the hard way, and the people who invested in me.</p>
 
-    <div style="margin: clamp(56px,9vh,90px) 0;">
-      <div data-reveal style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #8a8178; margin-bottom: 8px;">the log</div>
+    <!-- BELIEFS -->
+    <section style="margin-top: clamp(64px,10vh,100px);">
+      <div data-reveal style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 24px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent);">01 — beliefs</span>
+        <span style="flex: 1; height: 1px; background: rgba(43,39,36,0.12);"></span>
+      </div>
+      <div data-reveal style="padding: 24px 0; border-top: 1px solid rgba(43,39,36,0.1);">
+        <h3 style="margin: 0 0 8px; font-weight: 400; font-size: 1.3rem; letter-spacing: -0.01em;">A growth mindset changes everything.</h3>
+        <p style="margin: 0; font-size: 1.1rem; line-height: 1.8; color: #4a443e;">Straight out of Carol Dweck's <em>Mindset</em>: ability isn't fixed. Once you treat skill as something you build rather than something you're born with, it quietly rewrites what feels possible.</p>
+      </div>
+      <div data-reveal style="padding: 24px 0; border-top: 1px solid rgba(43,39,36,0.1);">
+        <h3 style="margin: 0 0 8px; font-weight: 400; font-size: 1.3rem; letter-spacing: -0.01em;">You have more control than it feels like.</h3>
+        <p style="margin: 0; font-size: 1.1rem; line-height: 1.8; color: #4a443e;">You can't choose every outcome, but you can almost always learn and adapt your way toward a better one. Learning is the lever you actually get to pull.</p>
+      </div>
+      <div data-reveal style="padding: 24px 0; border-top: 1px solid rgba(43,39,36,0.1);">
+        <h3 style="margin: 0 0 8px; font-weight: 400; font-size: 1.3rem; letter-spacing: -0.01em;">Growth is the most valuable asset I own.</h3>
+        <p style="margin: 0; font-size: 1.1rem; line-height: 1.8; color: #4a443e;">Compounded over a lifetime, what I learn outperforms anything else I could invest in — so I treat it like the asset it is, and protect the time for it.</p>
+      </div>
+    </section>
+
+    <!-- MEDIA -->
+    <section style="margin-top: clamp(72px,11vh,120px);">
+      <div data-reveal style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 24px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent);">02 — media that shaped how I think</span>
+        <span style="flex: 1; height: 1px; background: rgba(43,39,36,0.12);"></span>
+      </div>
       <div id="mediaLog"></div>
-    </div>
+    </section>
 
-    <div data-reveal style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #8a8178; margin-bottom: 22px;">thoughts on growth</div>
-    <p data-reveal style="margin: 0 0 22px; font-size: 1.16rem; line-height: 1.85; color: #2b2724; font-weight: 300;">I've stopped trusting the version of growth that's really just accumulation — more books finished, more tickets closed, more moved through. The growth that's held up for me looks slower: returning to the same few ideas until they change how I act, not just what I can talk about.</p>
-    <p data-reveal style="margin: 0 0 22px; font-size: 1.16rem; line-height: 1.85; color: #2b2724; font-weight: 300;">The same instinct runs through the product I'm building and the way I learn a codebase or a car. Depth costs patience up front and pays it back quietly. I'd rather know a few things — and a few people — all the way down.</p>
-    <p data-reveal style="margin: 0; font-size: 1.16rem; line-height: 1.85; color: #2b2724; font-weight: 300;">So this page will stay short, and grow slowly. That's the point of it.</p>
+    <!-- LESSONS -->
+    <section style="margin-top: clamp(72px,11vh,120px);">
+      <div data-reveal style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 24px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent);">03 — lessons, learned the hard way</span>
+        <span style="flex: 1; height: 1px; background: rgba(43,39,36,0.12);"></span>
+      </div>
+      <div data-reveal style="padding: 24px 0; border-top: 1px solid rgba(43,39,36,0.1);">
+        <h3 style="margin: 0 0 8px; font-weight: 400; font-size: 1.3rem; letter-spacing: -0.01em;">Failure is just a data point.</h3>
+        <p style="margin: 0; font-size: 1.1rem; line-height: 1.8; color: #4a443e;">A failed attempt isn't a setback, it's a measurement. Each one narrows the search for what actually works. Counted honestly, failure <em>is</em> progress.</p>
+      </div>
+      <div data-reveal style="padding: 24px 0; border-top: 1px solid rgba(43,39,36,0.1);">
+        <h3 style="margin: 0 0 8px; font-weight: 400; font-size: 1.3rem; letter-spacing: -0.01em;">Generosity is a currency.</h3>
+        <p style="margin: 0; font-size: 1.1rem; line-height: 1.8; color: #4a443e;">Give intentionally and genuinely — time, attention, resources — and it compounds in ways you can never engineer directly.</p>
+      </div>
+      <div data-reveal style="padding: 24px 0; border-top: 1px solid rgba(43,39,36,0.1);">
+        <h3 style="margin: 0 0 8px; font-weight: 400; font-size: 1.3rem; letter-spacing: -0.01em;">Protect the work.</h3>
+        <p style="margin: 0; font-size: 1.1rem; line-height: 1.8; color: #4a443e;">A <em>Phoenix Project</em> principle I keep close: guard your own focus and the work of the people around you from the constant chaos that tries to interrupt it.</p>
+      </div>
+      <div data-reveal style="padding: 24px 0; border-top: 1px solid rgba(43,39,36,0.1);">
+        <h3 style="margin: 0 0 8px; font-weight: 400; font-size: 1.3rem; letter-spacing: -0.01em;">Worthwhile things require work.</h3>
+        <p style="margin: 0; font-size: 1.1rem; line-height: 1.8; color: #4a443e;">If it were easy it wouldn't be worth much. More often than not, the difficulty is the point — not the obstacle in front of it.</p>
+      </div>
+      <div data-reveal style="padding: 24px 0; border-top: 1px solid rgba(43,39,36,0.1);">
+        <h3 style="margin: 0 0 8px; font-weight: 400; font-size: 1.3rem; letter-spacing: -0.01em;">Curiosity is the engine.</h3>
+        <p style="margin: 0; font-size: 1.1rem; line-height: 1.8; color: #4a443e;">Above all of it: stay curious. Curiosity is what keeps the learning going long after discipline runs out — the one habit under all the others.</p>
+      </div>
+    </section>
+
+    <!-- PEOPLE -->
+    <section style="margin-top: clamp(72px,11vh,120px);">
+      <div data-reveal style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 24px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent);">04 — the people who invested in me</span>
+        <span style="flex: 1; height: 1px; background: rgba(43,39,36,0.12);"></span>
+      </div>
+      <p data-reveal style="margin: 0 0 8px; font-size: 1.16rem; line-height: 1.85; color: #2b2724; font-weight: 300;">More than anything else on this page, this part matters. A handful of people have shaped how I think by investing their own knowledge in me.</p>
+      <div data-reveal style="padding: 28px 0 26px; border-top: 1px solid rgba(43,39,36,0.1); margin-top: 24px;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px;">mentor · my dad</div>
+        <h3 style="margin: 0 0 10px; font-weight: 400; font-size: 1.55rem; letter-spacing: -0.01em;">Nathan Ice</h3>
+        <p style="margin: 0; font-size: 1.1rem; line-height: 1.8; color: #4a443e;">The longest-running influence on how I think. Across a career of CIO roles — and as my dad — he's mentored and taught me my entire life, handing me the tools to handle both work and everything around it.</p>
+      </div>
+      <div data-reveal style="padding: 28px 0 26px; border-top: 1px solid rgba(43,39,36,0.1);">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px;">mentor</div>
+        <h3 style="margin: 0 0 10px; font-weight: 400; font-size: 1.55rem; letter-spacing: -0.01em;">Blake Holman</h3>
+        <p style="margin: 0; font-size: 1.1rem; line-height: 1.8; color: #4a443e;">My mentor this past year. We meet every week and talk through everything from work-life balance to managing technical teams and leading an organization — a steady, direct influence on how I'm learning to lead.</p>
+      </div>
+      <div data-reveal style="margin-top: 44px;">
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #8a8178; margin-bottom: 18px;">and others who've shaped a part of how I think</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+          <span class="person-pill">Shannon Ice</span>
+          <span class="person-pill">Angela O'Brien</span>
+          <span class="person-pill">Alan Burrow</span>
+          <span class="person-pill">Addie Deinlein</span>
+          <span class="person-pill">Suzanne Mallette</span>
+          <span class="person-pill">James Parrish</span>
+          <span class="person-pill">LeRoy Hardy</span>
+          <span class="person-pill">David Thach</span>
+          <span class="person-pill">Anna Sidorova</span>
+          <span class="person-pill">Jyoti Dalal</span>
+          <span class="person-pill">Rashmi Jain</span>
+          <span class="person-pill">Laurie Giddens</span>
+        </div>
+      </div>
+    </section>
 
     <footer style="margin-top: clamp(90px, 14vh, 150px); padding-top: 34px; border-top: 1px solid rgba(43,39,36,0.1); display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #8a8178;">
       <span>updated when something actually lands</span>
@@ -479,10 +564,15 @@
   ];
 
   var mediaLog = [
-    { kind: "learning", title: "Playwright + test automation", by: "QA on the Alight account", note: "Ramping onto the QA team using Playwright — picking up stories and testing at the same velocity as the full-time engineers." },
-    { kind: "practice", title: "WCAG 2.1 AA", by: "Accessibility, in the real world", note: "Filing actual accessibility bugs taught me more about inclusive design than any checklist ever did." },
-    { kind: "building", title: "Claude Code routines", by: "Knowledge-vault automation", note: "Migrated the vault's ingestion to Claude Code — Slack messages and meeting transcripts in, structured, searchable knowledge out." },
-    { kind: "learning", title: "Zephyr & Storybook", by: "The rest of the testing pipeline", note: "Filling in the parts of the QA process I hadn't touched yet — test-case management and component-level testing." }
+    { kind: "book", title: "Mindset", by: "Carol S. Dweck", note: "The foundation — fixed vs. growth mindset, and why the second one compounds." },
+    { kind: "book", title: "Rich Dad Poor Dad", by: "Robert Kiyosaki", note: "Rewired how I think about assets, ownership, and making money work instead of just earning it." },
+    { kind: "book", title: "The Phoenix Project", by: "Gene Kim, Kevin Behr & George Spafford", note: "How work actually flows through an organization — and how to protect it from chaos." },
+    { kind: "book", title: "Moonwalking with Einstein", by: "Joshua Foer", note: "Memory is a trainable skill, not a gift — proof that most limits are just practice." },
+    { kind: "book", title: "Leaders Eat Last", by: "Simon Sinek", note: "Leadership as responsibility for the people around you, not authority over them." },
+    { kind: "book", title: "Crucial Conversations", by: "Patterson, Grenny, McMillan & Switzler", note: "How to stay useful in the highest-stakes conversations instead of avoiding them." },
+    { kind: "podcast", title: "How I Built This", by: "Guy Raz", note: "A few hundred founders' worth of pattern-matching on grit, timing, and luck." },
+    { kind: "book", title: "Influence", by: "Robert Cialdini", note: "The mechanics of persuasion — worth understanding from both sides." },
+    { kind: "book", title: "The Richest Man in Babylon", by: "George S. Clason", note: "Old, simple, durable rules for building wealth patiently." }
   ];
 
   var buildNotes = [
