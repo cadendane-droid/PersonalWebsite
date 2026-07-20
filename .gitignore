@@ -1,0 +1,8 @@
+# macOS
+.DS_Store
+
+# Private source material — do NOT publish these to a public repo.
+# "About Caden.md" and the raw Claude Design export contain personal notes.
+/content/
+/_unzipped/
+PersonalWebsite.zip

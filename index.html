@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Caden Ice</title>
+<meta name="description" content="Caden Ice — Business Computer Information Systems student, product owner, and builder in the DFW area. Building Almura and RideSafe.">
+<meta name="author" content="Caden Ice">
+<!-- Open Graph -->
+<meta property="og:title" content="Caden Ice">
+<meta property="og:description" content="Product owner and builder in the DFW area. I'd rather do a few things with real depth than a lot of things fast.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200;0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --accent: #b5623a; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body { background: #f4efe8; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  ::selection { background: #b5623a; color: #f7f3ec; }
+  a { color: var(--accent); text-decoration: none; transition: color .25s ease; }
+  a:hover { color: #2b2724; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+  /* nav buttons */
+  .navbtn { all: unset; cursor: pointer; transition: color .25s ease; }
+  .navbtn.active { color: var(--accent); }
+  .navbtn:not(.active) { color: #8a8178; }
+  .navbtn:not(.active):hover { color: #2b2724; }
+  /* hover helpers */
+  .btn-dark { transition: background .25s ease; }
+  .btn-dark:hover { background: var(--accent); color: #f4efe8; }
+  .btn-outline { transition: border-color .25s ease, color .25s ease; }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-ghost { transition: background .25s ease, border-color .25s ease; }
+  .btn-ghost:hover { background: var(--accent); border-color: var(--accent); }
+  /* view toggling */
+  .view { display: none; }
+  .view.active { display: block; }
+  @media (max-width: 720px) {
+    .nav-links { gap: 14px !important; }
+    .hero-grid, .pro-header, .about-grid, .edu-skills, .resume-row { grid-template-columns: 1fr !important; }
+  }
+</style>
+</head>
+<body>
+<div id="root" style="min-height: 100vh; background: #f4efe8; color: #2b2724; font-family: 'Newsreader', Georgia, serif; position: relative; overflow-x: hidden;">
+
+  <!-- ambient depth planes -->
+  <div style="position: fixed; inset: 0; pointer-events: none; z-index: 0; background: radial-gradient(120% 80% at 85% -10%, rgba(181,98,58,0.06), transparent 60%), radial-gradient(90% 60% at -10% 110%, rgba(43,39,36,0.05), transparent 55%);"></div>
+
+  <!-- NAV -->
+  <nav style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 20px clamp(20px, 5vw, 64px); background: rgba(244,239,232,0.72); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(43,39,36,0.08);">
+    <button data-go="home" class="navbtn" style="font-family: 'JetBrains Mono', monospace; font-size: 12.5px; letter-spacing: 0.12em; text-transform: lowercase; color: #2b2724 !important; display: flex; align-items: baseline; gap: 8px;">
+      <span style="width: 7px; height: 7px; border-radius: 50%; background: var(--accent); display: inline-block; transform: translateY(-1px);"></span>caden ice
+    </button>
+    <div class="nav-links" style="display: flex; align-items: center; gap: clamp(14px, 2.4vw, 30px); font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.06em;">
+      <button data-go="home" class="navbtn nav-item">home</button>
+      <button data-go="hobbies" class="navbtn nav-item">hobbies</button>
+      <button data-go="pro" class="navbtn nav-item">professional</button>
+      <button data-go="growth" class="navbtn nav-item">growth</button>
+      <button data-go="projects" class="navbtn nav-item">projects</button>
+    </div>
+  </nav>
+
+  <!-- ============ HOME / ABOUT ============ -->
+  <div class="view" data-view="home">
+  <main style="position: relative; z-index: 1; max-width: 1120px; margin: 0 auto; padding: clamp(120px, 16vh, 190px) clamp(20px, 5vw, 64px) 120px;">
+
+    <!-- HERO -->
+    <header class="hero-grid" style="display: grid; grid-template-columns: minmax(0,1.35fr) minmax(0,0.9fr); gap: clamp(28px, 5vw, 72px); align-items: end;">
+      <div>
+        <div data-reveal style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 26px;">personal site — caden ice</div>
+        <h1 data-reveal style="margin: 0; font-weight: 300; font-size: clamp(2.5rem, 6.2vw, 5.1rem); line-height: 1.02; letter-spacing: -0.022em; text-wrap: balance;">I'd rather do a few things<br><em style="font-style: italic; font-weight: 300;">with real depth</em> than a lot of things fast.</h1>
+        <p data-reveal style="margin: 34px 0 0; font-size: 12px; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.04em; color: #8a8178; max-width: 46ch; line-height: 1.9;">now — building v2 of Almura for students · QA + product ownership at Zeal · cars, PCs, and building things by hand</p>
+      </div>
+      <!-- personal photo -->
+      <div data-reveal style="align-self: end;">
+        <div style="position: relative; aspect-ratio: 4/5; border-radius: 4px; background: repeating-linear-gradient(135deg, #e7ded1 0 10px, #ede5d9 10px 20px); box-shadow: 0 26px 50px -28px rgba(43,39,36,0.4); display: flex; align-items: flex-end; padding: 16px;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 10.5px; letter-spacing: 0.06em; color: #9a9082; background: rgba(244,239,232,0.85); padding: 5px 8px; border-radius: 3px;">drop: assets/portrait.jpg</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- A LITTLE ABOUT ME -->
+    <section class="about-grid" style="margin-top: clamp(90px, 14vh, 160px); display: grid; grid-template-columns: minmax(0,0.4fr) minmax(0,1fr); gap: clamp(24px, 5vw, 64px);">
+      <div data-reveal style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #8a8178; padding-top: 10px;">01 — a little<br>about me</div>
+      <div data-reveal>
+        <p style="margin: 0 0 22px; font-size: clamp(1.15rem, 1.9vw, 1.5rem); line-height: 1.7; font-weight: 300; max-width: 58ch;">I'm Caden Ice — a Business Computer Information Systems student at the University of North Texas, headed toward product ownership and Agile leadership. Right now I'm building Almura, a tool that helps students turn scattered conversations into relationships they actually keep.</p>
+        <p style="margin: 0; font-size: 1.12rem; line-height: 1.78; color: #4a443e; max-width: 60ch;">Underneath the product is a belief I keep circling back to: depth beats volume — in the people you know, the work you make, and the way you make it. By day I'm a QA engineer and product owner on a consulting team; by night I'm shipping software, wrenching on my STI, and building PCs. This site is small on purpose. A few things I care about, made with attention.</p>
+      </div>
+    </section>
+
+    <!-- STORY TIMELINE -->
+    <section style="margin-top: clamp(110px, 18vh, 200px);">
+      <div data-reveal style="display: flex; align-items: baseline; gap: 16px; margin-bottom: clamp(44px, 7vh, 80px);">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #8a8178;">02 — the story so far</span>
+        <span style="flex: 1; height: 1px; background: rgba(43,39,36,0.12);"></span>
+      </div>
+
+      <div style="position: relative; display: grid; grid-template-columns: 88px 1fr; gap: clamp(20px, 4vw, 48px);">
+        <div style="position: relative;">
+          <div style="position: absolute; left: 5px; top: 6px; bottom: 6px; width: 1px; background: rgba(43,39,36,0.14);"></div>
+        </div>
+        <div id="moments" style="display: flex; flex-direction: column; gap: clamp(56px, 9vh, 104px);"></div>
+      </div>
+    </section>
+
+    <footer style="margin-top: clamp(110px, 16vh, 180px); padding-top: 34px; border-top: 1px solid rgba(43,39,36,0.1); display: flex; flex-wrap: wrap; gap: 18px 40px; justify-content: space-between; align-items: baseline; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.06em; color: #8a8178;">
+      <span>caden ice — personal site, made by hand</span>
+      <span><a href="https://www.linkedin.com/in/caden-ice" target="_blank" rel="noopener">linkedin ↗</a> · <a href="mailto:cadenice03@gmail.com">email ↗</a></span>
+    </footer>
+  </main>
+  </div>
+
+  <!-- ============ HOBBIES ============ -->
+  <div class="view" data-view="hobbies">
+  <main style="position: relative; z-index: 1;">
+    <section style="max-width: 1120px; margin: 0 auto; padding: clamp(120px, 16vh, 180px) clamp(20px, 5vw, 64px) 0;">
+      <div data-reveal style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 24px;">hobbies / 01 — cars + building things</div>
+      <h1 data-reveal style="margin: 0; font-weight: 300; font-size: clamp(2.4rem, 5.8vw, 4.6rem); line-height: 1.04; letter-spacing: -0.02em; max-width: 16ch; text-wrap: balance;">Machines I like <em style="font-style: italic;">understanding</em> as much as driving.</h1>
+      <p data-reveal style="margin: 30px 0 0; font-size: 1.18rem; line-height: 1.75; color: #4a443e; max-width: 56ch; font-weight: 300;">Most of what I love here isn't speed. It's that a car — or a PC, or a hand-built cyberdeck — is honest. It does exactly what its parts say it will. Learning one by having my hands in it is the closest thing I've found to reading something's mind.</p>
+    </section>
+
+    <!-- gallery -->
+    <section style="max-width: 1120px; margin: clamp(64px, 10vh, 110px) auto 0; padding: 0 clamp(20px, 5vw, 64px);">
+      <div style="display: grid; grid-template-columns: 1.4fr 1fr; grid-auto-rows: 1fr; gap: clamp(16px, 2.4vw, 28px);">
+        <div data-reveal style="grid-row: span 2; position: relative; aspect-ratio: 4/5; border-radius: 5px; overflow: hidden; background: repeating-linear-gradient(135deg, #e4dacb 0 11px, #ece3d5 11px 22px); box-shadow: 0 30px 60px -34px rgba(43,39,36,0.5);">
+          <span style="position: absolute; left: 16px; bottom: 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #8f8576; background: rgba(244,239,232,0.9); padding: 6px 9px; border-radius: 3px;">the STI — assets/sti.jpg</span>
+        </div>
+        <div data-reveal style="position: relative; border-radius: 5px; overflow: hidden; background: repeating-linear-gradient(135deg, #e7ded1 0 11px, #efe7db 11px 22px); box-shadow: 0 24px 46px -30px rgba(43,39,36,0.45); min-height: 200px;">
+          <span style="position: absolute; left: 14px; bottom: 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #8f8576; background: rgba(244,239,232,0.9); padding: 6px 9px; border-radius: 3px;">the truck</span>
+        </div>
+        <div data-reveal style="position: relative; border-radius: 5px; overflow: hidden; background: repeating-linear-gradient(135deg, #e7ded1 0 11px, #efe7db 11px 22px); box-shadow: 0 24px 46px -30px rgba(43,39,36,0.45); min-height: 200px;">
+          <span style="position: absolute; left: 14px; bottom: 14px; font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #8f8576; background: rgba(244,239,232,0.9); padding: 6px 9px; border-radius: 3px;">detail — the cyberdeck</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- in the garage -->
+    <section style="max-width: 1120px; margin: clamp(80px, 12vh, 140px) auto 0; padding: 0 clamp(20px, 5vw, 64px);">
+      <div data-reveal style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 40px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #8a8178;">in the garage</span>
+        <span style="flex: 1; height: 1px; background: rgba(43,39,36,0.12);"></span>
+      </div>
+      <div id="garage" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: clamp(20px, 3vw, 40px);"></div>
+
+      <!-- off the clock -->
+      <div data-reveal style="display: flex; align-items: baseline; gap: 16px; margin: clamp(70px,11vh,120px) 0 32px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #8a8178;">off the clock</span>
+        <span style="flex: 1; height: 1px; background: rgba(43,39,36,0.12);"></span>
+      </div>
+      <div id="offclock" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: clamp(18px, 2.6vw, 30px);"></div>
+
+      <footer style="margin-top: clamp(90px, 14vh, 150px); padding-top: 34px; border-top: 1px solid rgba(43,39,36,0.1); display: flex; flex-wrap: wrap; gap: 18px 40px; justify-content: space-between; align-items: baseline; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.06em; color: #8a8178;">
+        <span>next up — the professional side</span>
+        <button data-go="home" class="navbtn" style="color: var(--accent) !important;">← back home</button>
+      </footer>
+    </section>
+    <div style="height: clamp(60px,10vh,110px);"></div>
+  </main>
+  </div>
+
+  <!-- ============ PROFESSIONAL ============ -->
+  <div class="view" data-view="pro">
+  <main style="position: relative; z-index: 1; max-width: 1120px; margin: 0 auto; padding: clamp(120px, 16vh, 180px) clamp(20px, 5vw, 64px) 120px;">
+
+    <header class="pro-header" style="display: grid; grid-template-columns: minmax(0,1fr) minmax(0,0.85fr); gap: clamp(28px, 5vw, 72px); align-items: start;">
+      <div>
+        <div data-reveal style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 24px;">professional</div>
+        <h1 data-reveal style="margin: 0; font-weight: 300; font-size: clamp(2.3rem, 5.4vw, 4.2rem); line-height: 1.05; letter-spacing: -0.02em; max-width: 15ch; text-wrap: balance;">The narrative version, <em style="font-style: italic;">not a list of jobs.</em></h1>
+      </div>
+      <div data-reveal style="padding-top: clamp(4px, 3vw, 42px);">
+        <p style="margin: 0 0 18px; font-size: 1.12rem; line-height: 1.75; color: #4a443e;">I sit where product meets engineering — writing user stories and acceptance criteria one week, running Playwright tests and shipping features the next. I care most about the part where a rough idea becomes something that actually holds up in someone's hands.</p>
+        <p style="margin: 0; font-size: 1.12rem; line-height: 1.75; color: #4a443e;">Where I'm headed: product ownership and Agile leadership, working close to real users on problems that reward patience. The ambition isn't scale for its own sake — it's building things deep enough that people keep them.</p>
+      </div>
+    </header>
+
+    <!-- RÉSUMÉ -->
+    <section style="margin-top: clamp(80px, 12vh, 140px); display: grid; grid-template-columns: minmax(0,0.34fr) minmax(0,1fr); gap: clamp(24px, 5vw, 64px);">
+      <div data-reveal style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #8a8178; padding-top: 8px;">résumé</div>
+      <div data-reveal class="resume-row" style="display: flex; gap: clamp(20px, 3vw, 34px); align-items: stretch; flex-wrap: wrap;">
+        <a href="assets/CadenIce-Resume.pdf" target="_blank" rel="noopener" style="position: relative; width: 168px; aspect-ratio: 8.5/11; border-radius: 4px; background: repeating-linear-gradient(180deg, #efe7db 0 9px, #f3ede3 9px 18px); box-shadow: 0 22px 44px -28px rgba(43,39,36,0.45); flex-shrink: 0; display: block;">
+          <span style="position: absolute; left: 12px; bottom: 12px; font-family: 'JetBrains Mono', monospace; font-size: 9.5px; color: #9a9082; background: rgba(244,239,232,0.88); padding: 4px 7px; border-radius: 3px;">résumé.pdf</span>
+        </a>
+        <div style="display: flex; flex-direction: column; justify-content: center; gap: 14px; min-width: 200px;">
+          <p style="margin: 0; font-size: 1.05rem; line-height: 1.7; color: #4a443e; max-width: 34ch;">One page, kept current. View it in the browser or take a copy with you.</p>
+          <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+            <a href="assets/CadenIce-Resume.pdf" target="_blank" rel="noopener" class="btn-dark" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.04em; padding: 11px 18px; border-radius: 4px; background: #2b2724; color: #f4efe8;">view résumé</a>
+            <a href="assets/CadenIce-Resume.pdf" download class="btn-outline" style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.04em; padding: 11px 18px; border-radius: 4px; border: 1px solid rgba(43,39,36,0.25); color: #2b2724;">download ↓</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section style="margin-top: clamp(80px, 12vh, 130px);">
+      <div data-reveal style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 44px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #8a8178;">experience</span>
+        <span style="flex: 1; height: 1px; background: rgba(43,39,36,0.12);"></span>
+      </div>
+      <div id="experience"></div>
+    </section>
+
+    <!-- EDUCATION + SKILLS -->
+    <section class="edu-skills" style="margin-top: clamp(80px, 12vh, 130px); display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: clamp(40px, 6vw, 80px);">
+      <div>
+        <div data-reveal style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 32px;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #8a8178;">education</span>
+          <span style="flex: 1; height: 1px; background: rgba(43,39,36,0.12);"></span>
+        </div>
+        <div id="education"></div>
+        <div data-reveal style="display: flex; align-items: baseline; gap: 16px; margin: 44px 0 28px;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #8a8178;">certifications</span>
+          <span style="flex: 1; height: 1px; background: rgba(43,39,36,0.12);"></span>
+        </div>
+        <div id="certs"></div>
+      </div>
+      <div>
+        <div data-reveal style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 32px;">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #8a8178;">skills</span>
+          <span style="flex: 1; height: 1px; background: rgba(43,39,36,0.12);"></span>
+        </div>
+        <div id="skills"></div>
+      </div>
+    </section>
+
+    <!-- OUTCOMES -->
+    <section style="margin-top: clamp(80px, 12vh, 130px);">
+      <div data-reveal style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 40px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #8a8178;">outcomes — what actually got made</span>
+        <span style="flex: 1; height: 1px; background: rgba(43,39,36,0.12);"></span>
+      </div>
+      <div id="outcomes" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: clamp(18px, 2.6vw, 30px);"></div>
+    </section>
+
+    <!-- CURRENTLY -->
+    <section style="margin-top: clamp(80px, 12vh, 130px);">
+      <div data-reveal style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 40px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #8a8178;">currently</span>
+        <span style="flex: 1; height: 1px; background: rgba(43,39,36,0.12);"></span>
+        <a href="https://www.linkedin.com/in/caden-ice" target="_blank" rel="noopener" style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.04em;">connect on linkedin ↗</a>
+      </div>
+      <div id="currently" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: clamp(16px, 2.4vw, 26px);"></div>
+    </section>
+
+    <footer style="margin-top: clamp(100px, 16vh, 170px); padding-top: 34px; border-top: 1px solid rgba(43,39,36,0.1); display: flex; flex-wrap: wrap; gap: 18px 40px; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #8a8178;">
+      <span>Denton / DFW, TX · open to product & consulting roles</span>
+      <button data-go="home" class="navbtn" style="color: var(--accent) !important;">← back home</button>
+    </footer>
+  </main>
+  </div>
+
+  <!-- ============ GROWTH ============ -->
+  <div class="view" data-view="growth">
+  <main style="position: relative; z-index: 1; max-width: 720px; margin: 0 auto; padding: clamp(120px, 16vh, 190px) clamp(24px, 6vw, 40px) 120px;">
+    <div data-reveal style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 26px;">growth — a thinking space</div>
+    <h1 data-reveal style="margin: 0 0 36px; font-weight: 300; font-size: clamp(2.1rem, 4.6vw, 3.4rem); line-height: 1.1; letter-spacing: -0.018em;">What I take in, <em style="font-style: italic;">and what it moves.</em></h1>
+    <p data-reveal style="margin: 0 0 20px; font-size: 1.2rem; line-height: 1.85; font-weight: 300; color: #2b2724;">This is the quietest page on the site, on purpose. It's less a list of credentials than a record of what's actually changing how I think and work — usually slowly, usually more than I notice at the time.</p>
+
+    <div style="margin: clamp(56px,9vh,90px) 0;">
+      <div data-reveal style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #8a8178; margin-bottom: 8px;">the log</div>
+      <div id="mediaLog"></div>
+    </div>
+
+    <div data-reveal style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; color: #8a8178; margin-bottom: 22px;">thoughts on growth</div>
+    <p data-reveal style="margin: 0 0 22px; font-size: 1.16rem; line-height: 1.85; color: #2b2724; font-weight: 300;">I've stopped trusting the version of growth that's really just accumulation — more books finished, more tickets closed, more moved through. The growth that's held up for me looks slower: returning to the same few ideas until they change how I act, not just what I can talk about.</p>
+    <p data-reveal style="margin: 0 0 22px; font-size: 1.16rem; line-height: 1.85; color: #2b2724; font-weight: 300;">The same instinct runs through the product I'm building and the way I learn a codebase or a car. Depth costs patience up front and pays it back quietly. I'd rather know a few things — and a few people — all the way down.</p>
+    <p data-reveal style="margin: 0; font-size: 1.16rem; line-height: 1.85; color: #2b2724; font-weight: 300;">So this page will stay short, and grow slowly. That's the point of it.</p>
+
+    <footer style="margin-top: clamp(90px, 14vh, 150px); padding-top: 34px; border-top: 1px solid rgba(43,39,36,0.1); display: flex; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #8a8178;">
+      <span>updated when something actually lands</span>
+      <button data-go="home" class="navbtn" style="color: var(--accent) !important;">← back home</button>
+    </footer>
+  </main>
+  </div>
+
+  <!-- ============ PROJECTS ============ -->
+  <div class="view" data-view="projects">
+  <main style="position: relative; z-index: 1; max-width: 1120px; margin: 0 auto; padding: clamp(120px, 16vh, 180px) clamp(20px, 5vw, 64px) 120px;">
+    <div data-reveal style="font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); margin-bottom: 24px;">projects</div>
+    <h1 data-reveal style="margin: 0 0 12px; font-weight: 300; font-size: clamp(2.3rem, 5.4vw, 4.2rem); line-height: 1.04; letter-spacing: -0.02em; max-width: 16ch; text-wrap: balance;">A few things I made, <em style="font-style: italic;">and how.</em></h1>
+
+    <!-- 00 — THE SITE ITSELF -->
+    <section data-reveal style="margin-top: clamp(56px, 9vh, 90px); background: #2b2724; color: #f4efe8; border-radius: 10px; padding: clamp(30px, 5vw, 56px); box-shadow: 0 40px 80px -46px rgba(43,39,36,0.7);">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #d99a76; margin-bottom: 18px;">00 — the site itself</div>
+      <h2 style="margin: 0 0 16px; font-weight: 300; font-size: clamp(1.7rem, 3.4vw, 2.6rem); line-height: 1.12; max-width: 20ch;">This site is a project too — and it isn't a template.</h2>
+      <p style="margin: 0 0 26px; font-size: 1.1rem; line-height: 1.75; color: #d8cfc2; max-width: 58ch;">Every page here flexes on one hand-built core: shared type, spacing, and color, layered with room to lean toward credibility or self-expression depending on the page's job. It's a single static file — no framework, no build step. The proof is that you can look under it.</p>
+      <button id="toggleBuild" class="btn-ghost" style="all: unset; cursor: pointer; font-family: 'JetBrains Mono', monospace; font-size: 12px; letter-spacing: 0.04em; padding: 12px 20px; border-radius: 5px; border: 1px solid rgba(244,239,232,0.3); color: #f4efe8;">show how this was built</button>
+      <div id="buildNotes" style="display: none; margin-top: 32px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px; border-top: 1px solid rgba(244,239,232,0.16); padding-top: 30px;"></div>
+    </section>
+
+    <div id="projectList"></div>
+
+    <footer style="margin-top: clamp(100px, 16vh, 170px); padding-top: 34px; border-top: 1px solid rgba(43,39,36,0.1); display: flex; flex-wrap: wrap; gap: 18px 40px; justify-content: space-between; font-family: 'JetBrains Mono', monospace; font-size: 11.5px; color: #8a8178;">
+      <span>case studies get filled in as the work firms up</span>
+      <button data-go="home" class="navbtn" style="color: var(--accent) !important;">← back home</button>
+    </footer>
+  </main>
+  </div>
+
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---------------- CONTENT ---------------- */
+  var moments = [
+    { year: "early on", title: "The kid who took things apart", body: "I wanted to see what was inside more than I wanted the thing to keep working. It didn't always survive. But I learned early that understanding something is its own kind of owning it — a habit that still shows up in every car, PC, and codebase I touch." },
+    { year: "2019", title: "The first thing I wrote that ran", body: "The moment code actually did what I meant, software stopped feeling like magic and started feeling like material — something you shape with your hands, slowly, until it's right." },
+    { year: "2022", title: "A seat at the table, early", body: "Elected one of two off-campus representatives for ~500 students at Arkansas, helping allocate a $42K annual budget across ~20 funding proposals. My first real lesson in scoping, tradeoffs, and getting people to a decision." },
+    { year: "2025", title: "First software that shipped", body: "A summer at Zeal IT Consultants building full-stack features in Java, Spring Boot, and Angular — including a bulk formulary upload for pharmacy users. The distance between a working demo and something enterprise-safe became very real, very fast." },
+    { year: "2025", title: "RideSafe", body: "The first project that left the laptop and touched a real problem for real people — motorcycle crash risk, scored from public data. It became a top-10 international finalist in the SCLC 2026 competition and taught me the gap between a good idea and a thing that holds up." },
+    { year: "now", title: "Almura, and the slow work of v2", body: "By day: QA and product ownership on a consulting team, plus a knowledge vault I built that's now spreading company-wide. By night: Almura — helping students keep the relationships that scatter — mid-rewrite into v2 with a first cohort of testers. Depth over volume, applied to my own work." }
+  ];
+
+  var garage = [
+    { tag: "daily / project", name: "2019 WRX STI", note: "Bolt-on build — cat-back, BOV, cold-air intake, Cobb OTS tune. The point isn't the finish line; it's knowing every system by having had my hands in it." },
+    { tag: "the workhorse", name: "2019 Ram 1500 5.7 HEMI", note: "The truck that does the hauling. Also my sandbox for build math — I'll happily spend an evening modeling what a ProCharger would actually do to it." },
+    { tag: "build / ongoing", name: "PCs & a Pi-5 cyberdeck", note: "I build custom PCs for clients on the side, and made a waterproof, Faraday-caged Raspberry Pi 5 cyberdeck with offline storage. Torque specs or thermal paste — same quiet, hands-on counterweight to a day in software." }
+  ];
+
+  var offclock = [
+    { label: "on the course", body: "Golf — the slow, frustrating, deeply satisfying kind of practice." },
+    { label: "in the headphones", body: "EDM, most of the time I'm building anything." },
+    { label: "on the calendar", body: "A 16-week progressive running plan — Mon / Wed / Sat, one block at a time." }
+  ];
+
+  var experience = [
+    { when: "2026 — now", role: "QA Engineer & Product Owner (Intern)", org: "Zeal IT Consultants · Alight", tags: "Product ownership · QA · Playwright · WCAG AA", body: "A dual-track consulting and engineering role on Alight's “Money Pod” (HSA / FSA / retirement / pension platform). I write user stories and epics on the product side and pick up QA stories at the same velocity as the full-time engineers — automating tests in Playwright, raising WCAG 2.1 AA accessibility bugs, and building a Claude-guided workflow that runs a story from test start to finish. I also own the account's Obsidian knowledge vault (below)." },
+    { when: "Summer 2025", role: "Software Development Intern", org: "Zeal IT Consultants", tags: "Java · Spring Boot · Angular · Scrum", body: "Delivered full-stack features on a pharmacy formulary product — including a bulk formulary upload that validated and persisted drug data against enterprise schemas — and challenged legacy database assumptions to improve long-term maintainability. Worked inside a Scrum team on Jira through planning, standups, and delivery." },
+    { when: "2025 — now", role: "Product & Project Lead", org: "RideSafe (independent venture)", tags: "Product strategy · APIs · Risk modeling", body: "Creator and technical lead of a motorcycle-safety app that turns public crash data and risk-based routing into risk scores for intersections, road segments, and routes across Texas. Owned MVP scope and roadmap end to end — personas, user stories, acceptance criteria, and a scalable architecture — and entered it into the SCLC 2026 competition." },
+    { when: "2022 — 2023", role: "Off-Campus Student Representative", org: "Residents Interhall Congress · U. of Arkansas", tags: "Governance · Budgeting · Stakeholders", body: "Elected one of two representatives for ~500 off-campus students. Evaluated ~20 funding proposals and allocated a $42K annual budget toward social, wellness, and academic programs reaching hundreds of students." }
+  ];
+
+  var education = [
+    { school: "University of North Texas", detail: "B.S. Business Computer Information Systems — expected Dec 2026 · GPA 3.75", note: "Denton, TX. Focused on the seam between business and software — Agile delivery, business analysis, and building products that real users actually keep." }
+  ];
+
+  var certs = [
+    { name: "Iterative Software Development Bootcamp", by: "Zeal · 2025" },
+    { name: "PowerBI Bootcamp", by: "Udemy · 2025" },
+    { name: "Salesforce Bootcamp", by: "MaxLabs · 2024" }
+  ];
+
+  var skillGroups = [
+    { label: "Product & Delivery", items: "User stories & acceptance criteria · Agile / Scrum · Jira · Roadmapping · Stakeholder communication · QA" },
+    { label: "Engineering", items: "Java · Spring Boot · Angular · TypeScript · Python · PostgreSQL · REST APIs · Playwright" },
+    { label: "Data & Tools", items: "PowerBI / DAX · PostHog · GitHub · Notion · Obsidian" }
+  ];
+
+  var outcomes = [
+    { metric: "Top 10, global", body: "RideSafe named a top-10 international finalist in the SCLC 2026 competition, with a launch that reached 46K+ views." },
+    { metric: "Company-wide", body: "Built and deployed an Obsidian knowledge vault for the full Alight account; now used daily and spreading to other projects across the firm." },
+    { metric: "$42K budget", body: "Allocated a $42K annual budget across ~20 funding proposals as an elected representative for ~500 students." },
+    { metric: "9 interviews", body: "Ran 9 structured user-research interviews for Almura and synthesized them into a concrete v2 direction." }
+  ];
+
+  var currently = [
+    { when: "at work", body: "QA + product ownership on Alight's Money Pod — ramping onto the QA team using Playwright and filing real WCAG AA accessibility fixes." },
+    { when: "building", body: "Almura v2 — a ground-up rewrite shaped by a first cohort of student testers. Narrowing, not adding." },
+    { when: "competing", body: "Taking RideSafe through the SCLC 2026 finals and sharpening the crash-risk model." }
+  ];
+
+  var mediaLog = [
+    { kind: "learning", title: "Playwright + test automation", by: "QA on the Alight account", note: "Ramping onto the QA team using Playwright — picking up stories and testing at the same velocity as the full-time engineers." },
+    { kind: "practice", title: "WCAG 2.1 AA", by: "Accessibility, in the real world", note: "Filing actual accessibility bugs taught me more about inclusive design than any checklist ever did." },
+    { kind: "building", title: "Claude Code routines", by: "Knowledge-vault automation", note: "Migrated the vault's ingestion to Claude Code — Slack messages and meeting transcripts in, structured, searchable knowledge out." },
+    { kind: "learning", title: "Zephyr & Storybook", by: "The rest of the testing pipeline", note: "Filling in the parts of the QA process I hadn't touched yet — test-case management and component-level testing." }
+  ];
+
+  var buildNotes = [
+    { label: "Type", body: "Newsreader for warmth, JetBrains Mono as a quiet technical voice. No Inter, no default stack." },
+    { label: "Motion", body: "One IntersectionObserver drives every reveal — a fade and a 20px rise. Nothing moves without a reason." },
+    { label: "Structure", body: "A single hand-authored HTML file with vanilla JS — no framework, no build. Each page flexes on a shared core of type, space, and color." },
+    { label: "Restraint", body: "The hard part was leaving things out. Depth over volume applies to the site as much as the work." }
+  ];
+
+  var projects = [
+    {
+      index: "01 — almura", meta: "company · in progress",
+      title: "Helping students keep the relationships that scatter.",
+      shot: "almura — assets/almura.jpg",
+      cols: [
+        { label: "the problem", body: "Students meet more people than at any other point in life, and lose most of them to sheer volume — good conversations that never become relationships because nothing catches them." },
+        { label: "the approach", body: "A production relationship-intelligence app on the Claude API: RAG with pgvector, a React front end on Vercel, a Node backend on Railway, Supabase, and a D3 force-directed graph. Built around depth, so it works for a few real relationships — not a big empty list." },
+        { label: "where it is now", body: "V1 shipped and used; now mid-rewrite into V2 with a first cohort of student testers and an automated PostHog analytics pipeline shaping the direction. The current work is narrowing, not adding." }
+      ]
+    },
+    {
+      index: "02 — ridesafe", meta: "project · SCLC 2026 finalist",
+      title: "A safety tool built for one specific, real problem.",
+      shot: "ridesafe — assets/ridesafe.jpg",
+      cols: [
+        { label: "the problem", body: "Motorcyclists face wildly uneven risk depending on the exact intersections and road segments they ride — information that exists in public crash data but never reaches the rider making a route decision." },
+        { label: "the approach", body: "I built a risk-scoring engine on public crash data, external APIs, and risk-based routing that scores intersections, road segments, and full routes across Texas. I owned scope and roadmap end to end — personas, user stories, acceptance criteria, and a scalable architecture." },
+        { label: "where it landed", body: "A top-10 international finalist in the SCLC 2026 competition, with a launch that reached 46K+ views — and the clearest proof yet that I can take an idea from research to a build that holds up." }
+      ]
+    },
+    {
+      index: "03 — the knowledge vault", meta: "internal tool · shipped",
+      title: "An Obsidian knowledge vault that outgrew its account.",
+      shot: "knowledge vault — assets/vault.jpg",
+      cols: [
+        { label: "the problem", body: "Consulting knowledge — decisions, context, client dynamics — lived in scattered Slack threads and meeting transcripts, and evaporated the moment someone needed it later." },
+        { label: "the approach", body: "I built an Obsidian-based vault with automated ingestion — migrated to Claude Code routines that pull in Slack messages and Tactiq transcripts and turn them into structured, wikilinked, searchable notes." },
+        { label: "where it landed", body: "Deployed across the entire Alight account, presented to a large internal audience, and now spreading to other projects company-wide — well received and used frequently." }
+      ]
+    }
+  ];
+
+  /* ---------------- HELPERS ---------------- */
+  function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+  function el(id) { return document.getElementById(id); }
+
+  /* ---------------- RENDER ---------------- */
+  el("moments").innerHTML = moments.map(function (m) {
+    return '<div data-moment data-reveal style="position: relative;">' +
+      '<div data-dot style="position: absolute; left: -68px; top: 9px; width: 11px; height: 11px; border-radius: 50%; background: #f4efe8; border: 1.5px solid rgba(43,39,36,0.28); transition: background .5s ease, border-color .5s ease, transform .5s ease;"></div>' +
+      '<div style="font-family: \'JetBrains Mono\', monospace; font-size: 11.5px; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 12px;">' + esc(m.year) + '</div>' +
+      '<h3 style="margin: 0 0 12px; font-weight: 400; font-size: clamp(1.5rem, 2.8vw, 2.1rem); line-height: 1.12; letter-spacing: -0.015em;">' + esc(m.title) + '</h3>' +
+      '<p style="margin: 0; font-size: 1.1rem; line-height: 1.76; color: #4a443e; max-width: 56ch;">' + esc(m.body) + '</p>' +
+    '</div>';
+  }).join("");
+
+  el("garage").innerHTML = garage.map(function (g) {
+    return '<div data-reveal style="background: #faf7f1; border: 1px solid rgba(43,39,36,0.08); border-radius: 6px; padding: 26px 24px 28px; box-shadow: 0 18px 40px -32px rgba(43,39,36,0.4);">' +
+      '<div style="font-family: \'JetBrains Mono\', monospace; font-size: 11px; letter-spacing: 0.08em; color: var(--accent); margin-bottom: 14px;">' + esc(g.tag) + '</div>' +
+      '<h3 style="margin: 0 0 10px; font-weight: 400; font-size: 1.5rem; letter-spacing: -0.01em;">' + esc(g.name) + '</h3>' +
+      '<p style="margin: 0; font-size: 1.02rem; line-height: 1.7; color: #4a443e;">' + esc(g.note) + '</p>' +
+    '</div>';
+  }).join("");
+
+  el("offclock").innerHTML = offclock.map(function (o) {
+    return '<div data-reveal style="border: 1px solid rgba(43,39,36,0.1); border-radius: 6px; padding: 20px 20px 22px; background: #f7f3ec;">' +
+      '<div style="font-family: \'JetBrains Mono\', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px;">' + esc(o.label) + '</div>' +
+      '<p style="margin: 0; font-size: 1.02rem; line-height: 1.66; color: #2b2724;">' + esc(o.body) + '</p>' +
+    '</div>';
+  }).join("");
+
+  el("experience").innerHTML = experience.map(function (e) {
+    return '<div data-reveal style="display: grid; grid-template-columns: 150px 1fr; gap: clamp(16px, 3vw, 40px); padding: 26px 0; border-top: 1px solid rgba(43,39,36,0.1);">' +
+      '<div style="font-family: \'JetBrains Mono\', monospace; font-size: 12px; color: var(--accent); line-height: 1.7;">' + esc(e.when) + '</div>' +
+      '<div>' +
+        '<h3 style="margin: 0 0 4px; font-weight: 400; font-size: 1.4rem; letter-spacing: -0.01em;">' + esc(e.role) + ' <span style="color: #8a8178; font-weight: 300;">— ' + esc(e.org) + '</span></h3>' +
+        '<div style="font-family: \'JetBrains Mono\', monospace; font-size: 11px; letter-spacing: 0.04em; color: #8a8178; margin-bottom: 12px;">' + esc(e.tags) + '</div>' +
+        '<p style="margin: 0; font-size: 1.05rem; line-height: 1.72; color: #4a443e; max-width: 62ch;">' + esc(e.body) + '</p>' +
+      '</div>' +
+    '</div>';
+  }).join("");
+
+  el("education").innerHTML = education.map(function (ed) {
+    return '<div data-reveal style="margin-bottom: 26px;">' +
+      '<h3 style="margin: 0 0 5px; font-weight: 400; font-size: 1.3rem;">' + esc(ed.school) + '</h3>' +
+      '<div style="font-family: \'JetBrains Mono\', monospace; font-size: 11.5px; color: var(--accent); margin-bottom: 10px;">' + esc(ed.detail) + '</div>' +
+      '<p style="margin: 0; font-size: 1.02rem; line-height: 1.7; color: #4a443e;">' + esc(ed.note) + '</p>' +
+    '</div>';
+  }).join("");
+
+  el("certs").innerHTML = certs.map(function (c) {
+    return '<div data-reveal style="display: flex; justify-content: space-between; gap: 16px; padding: 13px 0; border-bottom: 1px solid rgba(43,39,36,0.08);">' +
+      '<span style="font-size: 1.05rem;">' + esc(c.name) + '</span>' +
+      '<span style="font-family: \'JetBrains Mono\', monospace; font-size: 11px; color: #8a8178; white-space: nowrap;">' + esc(c.by) + '</span>' +
+    '</div>';
+  }).join("");
+
+  el("skills").innerHTML = skillGroups.map(function (s) {
+    return '<div data-reveal style="margin-bottom: 24px;">' +
+      '<div style="font-family: \'JetBrains Mono\', monospace; font-size: 11px; letter-spacing: 0.08em; color: var(--accent); text-transform: uppercase; margin-bottom: 8px;">' + esc(s.label) + '</div>' +
+      '<p style="margin: 0; font-size: 1.08rem; line-height: 1.7; color: #2b2724;">' + esc(s.items) + '</p>' +
+    '</div>';
+  }).join("");
+
+  el("outcomes").innerHTML = outcomes.map(function (o) {
+    return '<div data-reveal style="background: #faf7f1; border: 1px solid rgba(43,39,36,0.08); border-radius: 6px; padding: 24px 22px; box-shadow: 0 16px 38px -32px rgba(43,39,36,0.4);">' +
+      '<div style="font-family: \'JetBrains Mono\', monospace; font-size: 1.1rem; letter-spacing: -0.01em; color: var(--accent); margin-bottom: 12px;">' + esc(o.metric) + '</div>' +
+      '<p style="margin: 0; font-size: 1rem; line-height: 1.66; color: #4a443e;">' + esc(o.body) + '</p>' +
+    '</div>';
+  }).join("");
+
+  el("currently").innerHTML = currently.map(function (p) {
+    return '<div data-reveal style="border: 1px solid rgba(43,39,36,0.1); border-radius: 6px; padding: 20px 20px 22px; background: #f7f3ec;">' +
+      '<div style="font-family: \'JetBrains Mono\', monospace; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px;">' + esc(p.when) + '</div>' +
+      '<p style="margin: 0; font-size: 1.02rem; line-height: 1.66; color: #2b2724;">' + esc(p.body) + '</p>' +
+    '</div>';
+  }).join("");
+
+  el("mediaLog").innerHTML = mediaLog.map(function (m) {
+    return '<div data-reveal style="padding: 26px 0; border-top: 1px solid rgba(43,39,36,0.1);">' +
+      '<div style="display: flex; align-items: baseline; gap: 10px; margin-bottom: 8px;">' +
+        '<span style="font-family: \'JetBrains Mono\', monospace; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); border: 1px solid rgba(181,98,58,0.35); padding: 2px 6px; border-radius: 3px;">' + esc(m.kind) + '</span>' +
+        '<span style="font-size: 1.22rem; font-weight: 400;">' + esc(m.title) + '</span>' +
+      '</div>' +
+      '<div style="font-family: \'JetBrains Mono\', monospace; font-size: 11px; color: #8a8178; margin-bottom: 12px;">' + esc(m.by) + '</div>' +
+      '<p style="margin: 0; font-size: 1.1rem; line-height: 1.8; color: #4a443e; font-style: italic; font-weight: 300;">' + esc(m.note) + '</p>' +
+    '</div>';
+  }).join("");
+
+  el("buildNotes").innerHTML = buildNotes.map(function (b) {
+    return '<div>' +
+      '<div style="font-family: \'JetBrains Mono\', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #d99a76; margin-bottom: 9px;">' + esc(b.label) + '</div>' +
+      '<p style="margin: 0; font-size: 0.99rem; line-height: 1.66; color: #d8cfc2;">' + esc(b.body) + '</p>' +
+    '</div>';
+  }).join("");
+
+  el("projectList").innerHTML = projects.map(function (p) {
+    var cols = p.cols.map(function (c) {
+      return '<div data-reveal>' +
+        '<div style="font-family: \'JetBrains Mono\', monospace; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: #8a8178; margin-bottom: 10px;">' + esc(c.label) + '</div>' +
+        '<p style="margin: 0; font-size: 1.05rem; line-height: 1.72; color: #4a443e;">' + esc(c.body) + '</p>' +
+      '</div>';
+    }).join("");
+    return '<section style="margin-top: clamp(70px, 11vh, 120px);">' +
+      '<div data-reveal style="display: flex; align-items: baseline; gap: 16px; margin-bottom: 30px; flex-wrap: wrap;">' +
+        '<span style="font-family: \'JetBrains Mono\', monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent);">' + esc(p.index) + '</span>' +
+        '<span style="font-family: \'JetBrains Mono\', monospace; font-size: 11px; color: #8a8178;">' + esc(p.meta) + '</span>' +
+        '<span style="flex: 1; height: 1px; background: rgba(43,39,36,0.12); min-width: 40px;"></span>' +
+      '</div>' +
+      '<h2 data-reveal style="margin: 0 0 24px; font-weight: 300; font-size: clamp(1.7rem, 3.4vw, 2.6rem); line-height: 1.12; max-width: 22ch;">' + esc(p.title) + '</h2>' +
+      '<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: clamp(20px,3vw,36px);">' + cols + '</div>' +
+      '<div data-reveal style="margin-top: 28px; position: relative; aspect-ratio: 16/7; border-radius: 8px; background: repeating-linear-gradient(135deg,#e7ded1 0 12px,#efe7db 12px 24px); box-shadow: 0 26px 52px -34px rgba(43,39,36,0.45);">' +
+        '<span style="position: absolute; left: 16px; bottom: 16px; font-family: \'JetBrains Mono\', monospace; font-size: 10.5px; color: #8f8576; background: rgba(244,239,232,0.9); padding: 5px 8px; border-radius: 3px;">' + esc(p.shot) + '</span>' +
+      '</div>' +
+    '</section>';
+  }).join("");
+
+  /* ---------------- VIEW SWITCHING ---------------- */
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var io = null;
+
+  function reveal(elm) {
+    elm.style.opacity = "1";
+    elm.style.transform = "none";
+    if (elm.hasAttribute("data-moment")) {
+      var dot = elm.querySelector("[data-dot]");
+      if (dot) {
+        dot.style.background = "var(--accent)";
+        dot.style.borderColor = "var(--accent)";
+        dot.style.transform = "scale(1.15)";
+      }
+    }
+  }
+
+  function setupObserver(root) {
+    if (io) io.disconnect();
+    var els = Array.prototype.slice.call(root.querySelectorAll("[data-reveal]"));
+    els.forEach(function (elm) {
+      if (reduce) { elm.style.opacity = "1"; elm.style.transform = "none"; return; }
+      elm.style.opacity = "0";
+      elm.style.transform = "translateY(20px)";
+      elm.style.transition = "opacity 0.7s cubic-bezier(.2,.7,.2,1), transform 0.7s cubic-bezier(.2,.7,.2,1)";
+      elm.style.willChange = "opacity, transform";
+    });
+    if (reduce) return;
+    io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { reveal(e.target); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.15, rootMargin: "0px 0px -8% 0px" });
+    els.forEach(function (elm) { io.observe(elm); });
+  }
+
+  function setView(v) {
+    var views = document.querySelectorAll(".view");
+    var current = null;
+    views.forEach(function (view) {
+      var on = view.getAttribute("data-view") === v;
+      view.classList.toggle("active", on);
+      if (on) current = view;
+    });
+    document.querySelectorAll(".nav-item").forEach(function (b) {
+      b.classList.toggle("active", b.getAttribute("data-go") === v);
+    });
+    window.scrollTo({ top: 0, behavior: "auto" });
+    if (current) requestAnimationFrame(function () { setupObserver(current); });
+    if (history.replaceState) history.replaceState(null, "", v === "home" ? "#" : "#" + v);
+  }
+
+  document.querySelectorAll("[data-go]").forEach(function (b) {
+    b.addEventListener("click", function () { setView(b.getAttribute("data-go")); });
+  });
+
+  var toggle = el("toggleBuild");
+  var notes = el("buildNotes");
+  toggle.addEventListener("click", function () {
+    var open = notes.style.display !== "none" && notes.style.display !== "";
+    notes.style.display = open ? "none" : "grid";
+    toggle.textContent = open ? "show how this was built" : "hide how it was built";
+    if (!open) requestAnimationFrame(function () { setupObserver(notes.closest(".view")); });
+  });
+
+  /* boot: honor deep link (#hobbies etc.) */
+  var initial = (location.hash || "").replace("#", "");
+  var valid = ["home", "hobbies", "pro", "growth", "projects"];
+  setView(valid.indexOf(initial) !== -1 ? initial : "home");
+})();
+</script>
+</body>
+</html>
