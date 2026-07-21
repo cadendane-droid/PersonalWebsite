@@ -78,6 +78,19 @@
     .hero-grid, .pro-header, .about-grid, .edu-skills, .resume-row, .car-gallery, .moto-grid, .travel-grid { grid-template-columns: 1fr !important; }
   }
 </style>
+<!-- PostHog analytics -->
+<script>
+  !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug getPageViewId captureTraceFeedback captureTraceMetric".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+  posthog.init('phc_tGNRQdmCv4x265ZeGA4yqnn3GR7oDihkWztJrjRXXaSS', {
+    api_host: 'https://us.i.posthog.com',
+    ui_host: 'https://us.posthog.com',
+    person_profiles: 'always',
+    capture_pageview: false,
+    capture_pageleave: true,
+    autocapture: true,
+    capture_heatmaps: true
+  });
+</script>
 </head>
 <body>
 <div id="root" style="min-height: 100vh; background: #f4efe8; color: #2b2724; font-family: 'Newsreader', Georgia, serif; position: relative; overflow-x: hidden;">
@@ -237,7 +250,7 @@
         <span style="flex: 1; height: 1px; background: rgba(43,39,36,0.12);"></span>
       </div>
       <p data-reveal style="margin: 0 0 28px; font-size: 1.08rem; line-height: 1.75; color: #4a443e; max-width: 58ch;">Flying is the newest thing I've gotten obsessed with — part photography, part reflexes, part learning to trust a machine I'm running from the ground. Here's some of what I've shot:</p>
-      <div class="yt-embed" data-id="DFvbRiPVTrk" data-reveal role="button" tabindex="0" aria-label="Play drone video">
+      <div class="yt-embed" data-id="DFvbRiPVTrk" data-video="drone-fpv" data-reveal role="button" tabindex="0" aria-label="Play drone video">
         <div class="yt-play"></div>
       </div>
     </section>
@@ -600,7 +613,7 @@
     {
       index: "02 — ridesafe", meta: "project · SCLC 2026 finalist",
       title: "A safety tool built for one specific, real problem.",
-      media: '<div data-reveal style="margin-top: 28px;"><div class="yt-embed" data-id="BJDY9oyZkig" role="button" tabindex="0" aria-label="Play RideSafe video"><div class="yt-play"></div></div></div>',
+      media: '<div data-reveal style="margin-top: 28px;"><div class="yt-embed" data-id="BJDY9oyZkig" data-video="ridesafe-demo" role="button" tabindex="0" aria-label="Play RideSafe video"><div class="yt-play"></div></div></div>',
       cols: [
         { label: "the problem", body: "Motorcyclists face wildly uneven risk depending on the exact intersections and road segments they ride — information that exists in public crash data but never reaches the rider making a route decision." },
         { label: "the approach", body: "I built a risk-scoring engine on public crash data, external APIs, and risk-based routing that scores intersections, road segments, and full routes across Texas — owning scope and roadmap end to end, from personas and a prioritized roadmap to a scalable architecture." },
@@ -799,6 +812,7 @@
     window.scrollTo({ top: 0, behavior: "auto" });
     if (current) requestAnimationFrame(function () { setupObserver(current); });
     if (history.replaceState) history.replaceState(null, "", v === "home" ? "#" : "#" + v);
+    trackView(v, current);
   }
 
   document.querySelectorAll("[data-go]").forEach(function (b) {
@@ -812,6 +826,7 @@
     notes.style.display = open ? "none" : "grid";
     toggle.textContent = open ? "show how this was built" : "hide how it was built";
     if (!open) requestAnimationFrame(function () { setupObserver(notes.closest(".view")); });
+    cap("build_notes_toggled", { open: !open });
   });
 
   /* click-to-play YouTube embeds (load the iframe only on click) */
@@ -826,6 +841,7 @@
     function play() {
       var vid = box.getAttribute("data-id");
       if (!vid) return;
+      cap("video_play", { video: box.getAttribute("data-video") || vid, video_id: vid });
       var ifr = document.createElement("iframe");
       ifr.src = "https://www.youtube.com/embed/" + vid + "?autoplay=1&rel=0";
       ifr.title = "Video";
@@ -836,6 +852,93 @@
     }
     box.addEventListener("click", play);
     box.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); play(); } });
+  });
+
+  /* ---------------- ANALYTICS (PostHog) ---------------- */
+  function cap(event, props) { try { if (window.posthog) window.posthog.capture(event, props || {}); } catch (e) {} }
+  function capNow(event, props) { try { if (window.posthog) window.posthog.capture(event, props || {}, { transport: "sendBeacon" }); } catch (e) {} }
+
+  var _viewName = null, _viewStart = 0, _scrollMarks = {}, _dwell = {}, _dwellObs = null;
+
+  function _label(elm) {
+    var kids = elm.querySelectorAll("span, div");
+    for (var i = 0; i < kids.length; i++) {
+      var cs = getComputedStyle(kids[i]);
+      if (cs.fontFamily.indexOf("JetBrains") !== -1 && cs.textTransform === "uppercase") {
+        var t = (kids[i].textContent || "").trim();
+        if (t && t.length <= 60) return t.toLowerCase();
+      }
+    }
+    var h = elm.querySelector("h1, h2, h3");
+    return h ? (h.textContent || "").trim().slice(0, 60).toLowerCase() : null;
+  }
+
+  function _flushDwell(beacon) {
+    var now = Date.now(), send = beacon ? capNow : cap;
+    Object.keys(_dwell).forEach(function (k) {
+      var d = _dwell[k];
+      if (d.since) { d.total += now - d.since; d.since = 0; }
+      var secs = Math.round(d.total / 1000);
+      if (secs >= 1) send(d.kind === "photo" ? "photo_dwell" : "section_dwell", { name: k, view: _viewName, seconds: secs });
+    });
+    _dwell = {};
+    if (_dwellObs) { _dwellObs.disconnect(); _dwellObs = null; }
+  }
+
+  function _setupDwell(viewEl) {
+    var items = [];
+    Array.prototype.forEach.call(viewEl.querySelectorAll("section"), function (sec) {
+      var n = _label(sec);
+      if (n) { sec.__tn = "section:" + n; sec.__tk = "section"; items.push(sec); }
+    });
+    Array.prototype.forEach.call(viewEl.querySelectorAll("img[alt]"), function (img) {
+      var a = (img.getAttribute("alt") || "").trim();
+      if (a) { img.__tn = "photo:" + a.toLowerCase(); img.__tk = "photo"; items.push(img); }
+    });
+    if (!items.length) return;
+    _dwellObs = new IntersectionObserver(function (entries) {
+      var now = Date.now();
+      entries.forEach(function (e) {
+        var k = e.target.__tn;
+        var d = _dwell[k] || (_dwell[k] = { total: 0, since: 0, kind: e.target.__tk });
+        if (e.isIntersecting) {
+          if (!d.since) d.since = now;
+          if (!d.seen) { d.seen = true; cap(d.kind === "photo" ? "photo_viewed" : "section_viewed", { name: k, view: _viewName }); }
+        } else if (d.since) { d.total += now - d.since; d.since = 0; }
+      });
+    }, { threshold: 0.5 });
+    items.forEach(function (it) { _dwellObs.observe(it); });
+  }
+
+  function trackView(v, viewEl) {
+    if (_viewName) { cap("view_duration", { view: _viewName, seconds: Math.round((Date.now() - _viewStart) / 1000) }); _flushDwell(false); }
+    _viewName = v; _viewStart = Date.now(); _scrollMarks = {};
+    cap("$pageview", { view: v, $pathname: (v === "home" ? "/" : "/" + v) });
+    if (viewEl) setTimeout(function () { _setupDwell(viewEl); }, 80);
+  }
+
+  window.addEventListener("scroll", function () {
+    var h = document.documentElement, max = h.scrollHeight - h.clientHeight;
+    if (max <= 40) return;
+    var pct = Math.round((h.scrollTop || window.pageYOffset) / max * 100);
+    [25, 50, 75, 100].forEach(function (m) { if (pct >= m && !_scrollMarks[m]) { _scrollMarks[m] = true; cap("scroll_depth", { view: _viewName, percent: m }); } });
+  }, { passive: true });
+
+  window.addEventListener("pagehide", function () {
+    if (_viewName) { capNow("view_duration", { view: _viewName, seconds: Math.round((Date.now() - _viewStart) / 1000) }); _flushDwell(true); _viewName = null; }
+  });
+
+  /* resume view / download */
+  Array.prototype.forEach.call(document.querySelectorAll('a[href="assets/CadenIce-Resume.pdf"]'), function (a) {
+    a.addEventListener("click", function () { cap(a.hasAttribute("download") ? "resume_downloaded" : "resume_viewed", {}); });
+  });
+
+  /* outbound links */
+  Array.prototype.forEach.call(document.querySelectorAll('a[href^="https://www.linkedin.com"], a[href^="mailto:"]'), function (a) {
+    a.addEventListener("click", function () {
+      var href = a.getAttribute("href");
+      cap("outbound_click", { destination: href.indexOf("mailto:") === 0 ? "email" : "linkedin", href: href });
+    });
   });
 
   /* boot: honor deep link (#hobbies etc.) */
